@@ -1,0 +1,1583 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 00:19:20 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /var/lib/gems/1.9.1/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 63ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (149.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (133.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLinks (20150212222213)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "url" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150212222213"]]
+  [1m[35m (142.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 00:24:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /var/lib/gems/1.9.1/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 36ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/links" for 127.0.0.1 at 2015-02-13 00:24:10 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 887ms (Views: 882.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:24:11 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:24:11 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:11 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:11 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:24:11 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:11 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:11 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:11 +0200
+
+
+Started GET "/links/new" for 127.0.0.1 at 2015-02-13 00:24:12 +0200
+Processing by LinksController#new as HTML
+  Rendered links/_form.html.erb (77.9ms)
+  Rendered links/new.html.erb within layouts/application (100.8ms)
+Completed 200 OK in 145ms (Views: 140.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mGRZPaxXC5jL6BxJL9ySjANqlLon8qnvP4/erDfkkV8=", "link"=>{"title"=>"Twitter", "url"=>"www.twitter.com"}, "commit"=>"Create Link"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "links" ("created_at", "title", "updated_at", "url") VALUES (?, ?, ?, ?)  [["created_at", "2015-02-12 22:24:23.417483"], ["title", "Twitter"], ["updated_at", "2015-02-12 22:24:23.417483"], ["url", "www.twitter.com"]]
+  [1m[36m (249.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/links/1
+Completed 302 Found in 312ms (ActiveRecord: 249.9ms)
+
+
+Started GET "/links/1" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links"  WHERE "links"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered links/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:23 +0200
+
+
+Started GET "/links" for 127.0.0.1 at 2015-02-13 00:24:26 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 62ms (Views: 61.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/links/new" for 127.0.0.1 at 2015-02-13 00:24:27 +0200
+Processing by LinksController#new as HTML
+  Rendered links/_form.html.erb (1.5ms)
+  Rendered links/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mGRZPaxXC5jL6BxJL9ySjANqlLon8qnvP4/erDfkkV8=", "link"=>{"title"=>"facebook", "url"=>"www.facebook.com"}, "commit"=>"Create Link"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("created_at", "title", "updated_at", "url") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-02-12 22:24:34.540068"], ["title", "facebook"], ["updated_at", "2015-02-12 22:24:34.540068"], ["url", "www.facebook.com"]]
+  [1m[35m (224.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/links/2
+Completed 302 Found in 229ms (ActiveRecord: 224.4ms)
+
+
+Started GET "/links/2" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links"  WHERE "links"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered links/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:24:34 +0200
+
+
+Started GET "/links" for 127.0.0.1 at 2015-02-13 00:24:37 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 00:36:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 110ms (Views: 100.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:36:14 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:36:14 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:36:14 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:36:14 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:36:14 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:36:14 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:36:14 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:36:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20150212224244)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150212224244"]]
+  [1m[36m (195.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 00:44:15 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 92ms (Views: 82.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:44:15 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:44:15 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:15 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:44:15 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:15 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:15 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:15 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:15 +0200
+
+
+Started GET "/users" for 127.0.0.1 at 2015-02-13 00:44:28 +0200
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (25.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-13 00:44:39 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (79.1ms)
+Completed 200 OK in 142ms (Views: 135.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:44:39 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:44:40 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:44:40 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:40 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:40 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:40 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:40 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:44:40 +0200
+
+
+Started POST "/users" for 127.0.0.1 at 2015-02-13 00:45:41 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mGRZPaxXC5jL6BxJL9ySjANqlLon8qnvP4/erDfkkV8=", "user"=>{"email"=>"mehmet@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mehmet@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-02-12 22:45:41.995288"], ["email", "mehmet@gmail.com"], ["encrypted_password", "$2a$10$.UjMPNlBHvx56tnGDxKMVe3MyvIG3SGdMUFAqs4.az0V3AElpNvni"], ["updated_at", "2015-02-12 22:45:41.995288"]]
+  [1m[35m (164.8ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-02-12 22:45:42.167857"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-02-12 22:45:42.167857"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-02-12 22:45:42.170904"]]
+  [1m[36m (160.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 611ms (ActiveRecord: 327.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 00:45:42 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:45:42 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:45:42 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:42 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:45:42 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:42 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:42 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:42 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:42 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 33ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:45:57 +0200
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:46:58 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 89ms (Views: 88.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:05 +0200
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.4ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 00:47:17 +0200
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 01:06:12 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00000004107580>:0x00000005497a78>):
+    10: 	<% flash.each do |name,msg| %>
+    11: 	<% content_tag(:div,msg,class:"alert alert-#{name}")%>
+    12: 	<% end %>
+    13: 	<% if user-signed_in? %>
+    14: 	<ul>
+    15: 		<li><%= link_to 'Submit link', new_link_path %></li>
+    16: 		<li><%= link_to 'Account', edit_user_registration_path %></li>
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___3952412137026137737_44360640'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 01:06:41 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 67ms (Views: 65.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 01:06:41 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 01:06:41 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:41 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 01:06:41 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:41 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:41 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:41 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:41 +0200
+
+
+Started GET "/links/new" for 127.0.0.1 at 2015-02-13 01:06:43 +0200
+Processing by LinksController#new as HTML
+  Rendered links/_form.html.erb (2.1ms)
+  Rendered links/new.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2015-02-13 01:06:44 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 63ms (Views: 61.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mGRZPaxXC5jL6BxJL9ySjANqlLon8qnvP4/erDfkkV8="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 33ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 62ms (Views: 60.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:46 +0200
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-13 01:06:48 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-13 01:06:49 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 73ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-13 01:06:50 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 67ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-13 01:06:51 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1172x+NZlkH7aky/agskXePqbqkZgpig6euMnB68c8=", "user"=>{"email"=>"mehmet@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'mehmet@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-02-12 23:06:58.117637"], ["sign_in_count", 2], ["updated_at", "2015-02-12 23:06:58.118207"]]
+  [1m[36m (198.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 304ms (ActiveRecord: 198.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 01:06:58 +0200
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links"   ORDER BY "links"."id" ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdToLinks (20150213123858)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "links" ADD "user_id" integer[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_links_on_user_id" ON "links" ("user_id")[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150213123858"]]
+  [1m[36m (183.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_links_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_links_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 14:44:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 407ms (Views: 319.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 14:44:35 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:35 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:35 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 14:44:35 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 14:44:35 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:35 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:35 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:35 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-13 14:44:40 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (193.6ms)
+Completed 200 OK in 250ms (Views: 225.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rDpbKT9f5sPP3tNKKRU7jbrcN2b9Dh3dIt3X0603qh4=", "user"=>{"email"=>"mehmet@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'mehmet@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2015-02-13 12:44:45.436253"], ["last_sign_in_at", "2015-02-12 23:06:58.117637"], ["sign_in_count", 3], ["updated_at", "2015-02-13 12:44:45.437379"]]
+  [1m[35m (143.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 550ms (ActiveRecord: 145.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:45 +0200
+
+
+Started GET "/links/new" for 127.0.0.1 at 2015-02-13 14:44:47 +0200
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered links/_form.html.erb (2.2ms)
+  Rendered links/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 127ms (Views: 56.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2015-02-13 14:44:57 +0200
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xt326Hl263l4bWY8atKloq9c/Uy6NCk8TFJfQyMJnlw=", "link"=>{"title"=>"css", "url"=>"www.css.com"}, "commit"=>"Create Link"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "links" ("created_at", "title", "updated_at", "url") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-02-13 12:44:57.993731"], ["title", "css"], ["updated_at", "2015-02-13 12:44:57.993731"], ["url", "www.css.com"]]
+  [1m[35m (280.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/links/3
+Completed 302 Found in 287ms (ActiveRecord: 281.0ms)
+
+
+Started GET "/links/3" for 127.0.0.1 at 2015-02-13 14:44:58 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links"  WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered links/show.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 14:44:58 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 14:44:58 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:58 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 14:44:58 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:58 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:58 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:58 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 14:44:58 +0200
+
+
+Started GET "/links/3" for 127.0.0.1 at 2015-02-13 14:45:56 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links"  WHERE "links"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered links/show.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 46ms (Views: 39.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-13 14:45:56 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-13 14:45:56 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 14:45:56 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-13 14:45:56 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-13 14:45:56 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-13 14:45:56 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-13 14:45:56 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-13 14:45:56 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 19:37:34 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 257ms (Views: 157.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 19:37:35 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 19:37:35 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 19:37:35 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-18 19:37:35 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 19:37:35 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 19:37:35 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 19:37:35 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 19:37:35 +0200
+
+
+Started GET "/links" for 127.0.0.1 at 2015-02-18 19:41:56 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.5ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 45ms (Views: 43.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 19:41:56 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-18 19:41:56 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 19:41:56 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 19:41:56 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 19:41:56 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 19:41:56 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 19:41:56 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 19:41:56 +0200
+
+
+Started GET "/links/3" for 127.0.0.1 at 2015-02-18 19:42:01 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links"  WHERE "links"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered links/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 19:42:01 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-18 19:42:01 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 19:42:01 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 19:42:01 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 19:42:01 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 19:42:01 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 19:42:01 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 19:42:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 19:44:56 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 19:44:56 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-18 19:44:56 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 19:44:56 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 19:44:56 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 19:44:56 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 19:44:56 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 19:44:56 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 19:44:56 +0200
+
+
+Started DELETE "/links/3" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+Processing by LinksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cA8Pf/bXtkAtTCDW3s/OfMHG6bWKNLrm35hUFZbHQK8=", "id"=>"3"}
+  [1m[35mLink Load (0.1ms)[0m  SELECT  "links".* FROM "links"  WHERE "links"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "links" WHERE "links"."id" = ?  [["id", 3]]
+  [1m[36m (183.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 230ms (ActiveRecord: 184.3ms)
+
+
+Started GET "/links" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.5ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 19:45:00 +0200
+
+
+Started GET "/links" for 127.0.0.1 at 2015-02-18 20:08:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 2383ms (Views: 2348.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 20:08:34 +0200
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-18 20:09:13 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (205.9ms)
+Completed 200 OK in 327ms (Views: 324.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-18 20:09:17 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 142ms (Views: 120.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-18 20:09:19 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 81ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 121ms (Views: 120.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 20:25:18 +0200
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-18 20:28:50 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 118ms (Views: 116.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 20:28:51 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 20:30:15 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.5ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 79ms (Views: 76.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 20:34:33 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.5ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (112.5ms)
+Completed 500 Internal Server Error in 116ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    2: <div class="link row clearfix">
+    3: <h2>
+    4:   <%= link_to link.title, link %><br>
+    5:   <small class="auther">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.email %></small>
+    6: 
+    7: </h2>
+    8:   
+  app/views/links/index.html.erb:5:in `block in _app_views_links_index_html_erb__4378662223364345845_69821242185020'
+  app/views/links/index.html.erb:1:in `_app_views_links_index_html_erb__4378662223364345845_69821242185020'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 20:36:58 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    2: <div class="link row clearfix">
+    3: <h2>
+    4:   <%= link_to link.title, link %><br>
+    5:   <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.email %></small>
+    6: 
+    7: </h2>
+    8:   
+  app/views/links/index.html.erb:5:in `block in _app_views_links_index_html_erb__4378662223364345845_42617740'
+  app/views/links/index.html.erb:1:in `_app_views_links_index_html_erb__4378662223364345845_42617740'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 77ms (Views: 76.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 20:38:33 +0200
+
+
+Started GET "/links" for 127.0.0.1 at 2015-02-18 20:39:25 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 86ms (Views: 84.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 20:39:25 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 20:39:25 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:25 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:25 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:26 +0200
+
+
+Started GET "/links/2" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links"  WHERE "links"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered links/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 117ms (Views: 114.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2015-02-18 20:39:29 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 20:40:11 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  Rendered links/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 87ms (Views: 84.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-18 20:40:14 +0200
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.1ms)[0m  SELECT "links".* FROM "links"
+  Rendered links/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 104ms (Views: 103.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-18 20:40:15 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 76ms (Views: 74.7ms | ActiveRecord: 0.0ms)
